@@ -11,10 +11,12 @@
             //Si el IMC es mayor de 29,9 entonces tiene obesidad.
             //Mostrar en pantalla la categoría de cada uno de los pacientes. La aplicación debe estar en capacidad de pedirle al usuario si quiere volver a calcular.
 
+            //Declaracion variable para respuesta si desea continuar calculando
             string respuesta;
 
             do
             {
+                //Declaracion variables para calculos IMC
                 double peso, altura, imc, alturaT;
 
                 Console.Write("\nIngrese el Peso del paciente en (KG): ");
