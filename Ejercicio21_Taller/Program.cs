@@ -11,24 +11,37 @@
             //Si el IMC es mayor de 29,9 entonces tiene obesidad.
             //Mostrar en pantalla la categoría de cada uno de los pacientes. La aplicación debe estar en capacidad de pedirle al usuario si quiere volver a calcular.
 
-            //Declaracion de variables 
 
-            double peso, altura, imc, alturaT;
+            string respuesta;
 
-            Console.Write("Ingrese el Peso del paciente en (KG): ");
-            peso = double.Parse(Console.ReadLine());
-            Console.Write("Ingrese la Altura del Paciente en (Mts): ");
-            altura = double.Parse(Console.ReadLine());
+            do
+            {
+                double peso, altura, imc, alturaT;
 
-            alturaT = altura * altura;
-            imc = (peso / alturaT);
+                Console.Write("\nIngrese el Peso del paciente en (KG): ");
+                peso = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese la Altura del Paciente en (Mts): ");
+                altura = double.Parse(Console.ReadLine());
 
+                // Operacion entre Altura * Altura para la formula IMC
+                alturaT = altura * altura;
 
-            if (imc < 18.5) Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en categoria: PESO INSUFICIENTE");
-            else if (imc == 18.5 && imc <= 24.9) Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en categoria: PESO SALUDABLE");
-            else if (imc == 25 && imc <= 29.9) Console.WriteLine("\nEl paciente Tiene un IMC de " + imc + " y se encuentra en categoria: SOBREPESO");
-            else Console.WriteLine("\nEl paciente Tiene un IMC de " + imc + " y se encuentra en categoria: OBESIDAD");
-            
+                // Formula para calcular indice de masa corporal
+                imc = (peso / alturaT);
+                //Validacion de condiciones 
+
+                if (imc < 18.5)
+                    Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en la categoría: PESO INSUFICIENTE");
+                else if (imc >= 18.5 && imc <= 24.9)
+                    Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en la categoría: PESO SALUDABLE");
+                else if (imc >= 25 && imc <= 29.9)
+                    Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en la categoría: SOBREPESO");
+                else
+                    Console.WriteLine("\nEl paciente tiene un IMC de " + imc + " y se encuentra en la categoría: OBESIDAD");
+
+                Console.WriteLine("\n¿Quiere volver a calcular un nuevo Paciente? (s/n)");
+                respuesta = Console.ReadLine();
+            } while (respuesta.ToLower() == ("s"));
         }
     }
 }
