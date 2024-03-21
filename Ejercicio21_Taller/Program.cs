@@ -11,7 +11,6 @@
             //Si el IMC es mayor de 29,9 entonces tiene obesidad.
             //Mostrar en pantalla la categoría de cada uno de los pacientes. La aplicación debe estar en capacidad de pedirle al usuario si quiere volver a calcular.
 
-
             string respuesta;
 
             do
